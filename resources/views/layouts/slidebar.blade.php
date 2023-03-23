@@ -14,7 +14,7 @@
                 <a href="{{ route('dashboard') }}" class="nav-link"><i
                         class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            <li class="menu-header">Master Data</li>
+            {{-- <li class="menu-header">Master Data</li>
             <li class="nav-item">
                 <a href="{{ route('stokjubelio') }}" class="nav-link"><i
                         class="fas fa-database"></i><span>Stok Jubelio</span></a>
@@ -22,7 +22,7 @@
             <li class="nav-item">
                 <a href="{{ route('stokff') }}" class="nav-link"><i
                         class="fas fa-database"></i><span>Stok FF</span></a>
-            </li>
+            </li> --}}
         </ul>
     </aside>
 </div>

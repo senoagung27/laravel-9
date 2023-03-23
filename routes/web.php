@@ -25,13 +25,13 @@ Route::get('/', function () {
 
 Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session'), 'verified'] ], function() {
     Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
-    Route::get('/store-json', [ DashboardController::class, "getstok" ])->name('dashboard');
-    Route::get('/getwarehouse', [ DashboardController::class, "getwarehouse" ])->name('dashboard');
+    // Route::get('/store-json', [ DashboardController::class, "getstok" ])->name('dashboard');
+    // Route::get('/getwarehouse', [ DashboardController::class, "getwarehouse" ])->name('dashboard');
 
 
-    Route::get('/StokJubelio', [ StokJubelioController::class, "index" ])->name('stokjubelio');
-    Route::get('/StokFF', [ StokFFController::class, "index" ])->name('stokff');
-    Route::get('/storeff', [ StokFFController::class, "store" ]);
+    // Route::get('/StokJubelio', [ StokJubelioController::class, "index" ])->name('stokjubelio');
+    // Route::get('/StokFF', [ StokFFController::class, "index" ])->name('stokff');
+    // Route::get('/storeff', [ StokFFController::class, "store" ]);
 
     // Route::get('/user', [ UserController::class, "index_view" ])->name('user');
     // Route::view('/user/new', "pages.user.user-new")->name('user.new');
