@@ -33,7 +33,7 @@ Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session')
     // Route::get('/StokFF', [ StokFFController::class, "index" ])->name('stokff');
     // Route::get('/storeff', [ StokFFController::class, "store" ]);
 
-    // Route::get('/user', [ UserController::class, "index_view" ])->name('user');
-    // Route::view('/user/new', "pages.user.user-new")->name('user.new');
-    // Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
+    Route::get('/user', [ UserController::class, "index" ])->name('user');
+    Route::view('/user/new', "pages.user.user-new")->name('user.new');
+    Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
 });
