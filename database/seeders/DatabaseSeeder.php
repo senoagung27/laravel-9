@@ -100,7 +100,6 @@ class DatabaseSeeder extends Seeder
         //     'password' => Hash::make('12341234'),
         //     'remember_token' => Str::random(10)
         // ]);
-        $this->call(RoleSeeder::class);
-        $this->call(UserSeeder::class);
+        $this->call(CreateAdminUserSeeder::class);
     }
 }
