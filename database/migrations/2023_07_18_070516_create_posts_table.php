@@ -13,11 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('warehouse_locations', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->longText('jubelio_locations_id');
-            $table->longText('jubelio_locations_name');
+            $table->unsignedBigInteger('user_id');
+            $table->string('title', 70);
+            $table->string('description', 320);
+            $table->text('body');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 
@@ -28,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('warehouse_locations');
+        Schema::dropIfExists('posts');
     }
 };

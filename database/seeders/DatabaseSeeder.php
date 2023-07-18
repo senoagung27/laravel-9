@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\StokJubelio;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Database\Seeders\RoleSeeder;
+use Database\Seeders\UserSeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -92,11 +94,13 @@ class DatabaseSeeder extends Seeder
         //     ->hasPosts(1)
         //     ->create();
 
-        User::factory()->create([
-            'name' => 'Super Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('12341234'),
-            'remember_token' => Str::random(10)
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Super Admin',
+        //     'email' => 'admin@gmail.com',
+        //     'password' => Hash::make('12341234'),
+        //     'remember_token' => Str::random(10)
+        // ]);
+        $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }
