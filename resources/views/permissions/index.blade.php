@@ -12,7 +12,7 @@
         </div>
 
         <div class="mt-2">
-            @include('layouts.messages')
+            @include('layouts.partials.messages')
         </div>
 
         <table class="table table-striped">

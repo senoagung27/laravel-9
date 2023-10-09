@@ -1,11 +1,11 @@
-{{-- <div class="main-sidebar sidebar-style-2">
+<div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <a href="{{ route('dashboard') }}">HRIS APP</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('dashboard') }}">
-                <img class="d-inline-block" width="32px" height="30.61px" src="{{  }}" alt="">
+                {{-- <img class="d-inline-block" width="32px" height="30.61px" src="{{  }}" alt=""> --}}
             </a>
         </div>
         <ul class="sidebar-menu">
@@ -14,19 +14,20 @@
                 <a href="{{ route('dashboard') }}" class="nav-link"><i
                         class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
-            @auth
-          @role('Admin')
+            {{-- @auth
+          @role('Admin') --}}
             <li class="menu-header">Master Data</li>
             <li class="nav-item">
-                <a href="{{ route('user') }}" class="nav-link"><i
+                <a href="{{ route('users.index') }}" class="nav-link"><i
                         class="fas fa-database"></i><span>User</span></a>
             </li>
-            @endrole
-            @endauth
+            {{-- @endrole
+            @endauth --}}
+
         </ul>
     </aside>
-</div> --}}
-<header class="p-3 bg-dark text-white">
+</div>
+{{-- <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -67,4 +68,4 @@
         @endguest
       </div>
     </div>
-  </header>
+  </header> --}}

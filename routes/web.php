@@ -87,12 +87,12 @@ Route::get('/', function () {
 // });
 
 Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session'), 'verified'] ], function() {
-    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('home.index');
+    Route::get('/dashboard', [ DashboardController::class, "index" ])->name('dashboard');
     // Route::get('/store-json', [ DashboardController::class, "getstok" ])->name('dashboard');
     // Route::get('/getwarehouse', [ DashboardController::class, "getwarehouse" ])->name('dashboard');
 
     Route::group(['prefix' => 'users'], function() {
-        Route::get('/', 'UsersController@index')->name('users.index');
+        Route::get('/', [ UserController::class, 'index'])->name('users.index');
         Route::get('/create', 'UsersController@create')->name('users.create');
         Route::post('/create', 'UsersController@store')->name('users.store');
         Route::get('/{user}/show', 'UsersController@show')->name('users.show');
@@ -105,7 +105,7 @@ Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session')
      * User Routes
      */
     Route::group(['prefix' => 'posts'], function() {
-        Route::get('/', [ RolesController::class, 'index'])->name('posts.index');
+        Route::get('/', [ PostsController::class, 'index'])->name('posts.index');
         Route::get('/create', 'PostsController@create')->name('posts.create');
         Route::post('/create', 'PostsController@store')->name('posts.store');
         Route::get('/{post}/show', 'PostsController@show')->name('posts.show');
